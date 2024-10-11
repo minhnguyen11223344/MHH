@@ -1,4 +1,4 @@
-function varargout = untitled(varargin)
+function varargout = bai1(varargin)
 % UNTITLED MATLAB code for untitled.fig
 %      UNTITLED, by itself, creates a new UNTITLED or raises the existing
 %      singleton*.

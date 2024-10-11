@@ -78,15 +78,9 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-hoi=questdlg('ban co muon thoat',...
-    'thuc su muon that khoihe thong','Yes','No','No');
-if strcmp(hoi,'Yes')
-    close
-    if strcmp(hoi,'No')
-        return;
-    end
-    end
-    
+hoi=questdl('bajn co muon thoat',...
+    'thuc su muon that khoihe thong');
+
 
 
 % --- Executes on button press in pushbutton1.

@@ -482,7 +482,7 @@ Ttb = str2num(Ttb); %Chuy?n ??i t? chu?i ký t? sang d?ng s?
 lamda = get(handles.edit3,'String');% Nh?n chu?i ký t? ? edit3 gán cho k2
 lamda = str2num(lamda); %Chuy?n ??i t? chu?i ký t? sang d?ng s? 
 miu = 1/Ttb;
-Pmk = (((lamda/miu).^(N+1)).*(1-(lamda/miu)))/(1-(lamda/miu)^(N+2));
+Pmk = (((lamda/miu)^(N+1))*(1-(lamda/miu)))/(1-(lamda/miu)^(N+2));
 Pmkk=100*Pmk
 set(handles.edit5,'String',Pmkk);
 Ppv = (1-Pmk);

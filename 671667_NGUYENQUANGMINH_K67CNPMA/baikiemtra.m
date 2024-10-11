@@ -1,35 +1,35 @@
-function varargout = bai3(varargin)
-% BAI3 MATLAB code for bai3.fig
-%      BAI3, by itself, creates a new BAI3 or raises the existing
+function varargout = baikiemtra(varargin)
+% UNTITLED MATLAB code for untitled.fig
+%      UNTITLED, by itself, creates a new UNTITLED or raises the existing
 %      singleton*.
 %
-%      H = BAI3 returns the handle to a new BAI3 or the handle to
+%      H = UNTITLED returns the handle to a new UNTITLED or the handle to
 %      the existing singleton*.
 %
-%      BAI3('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in BAI3.M with the given input arguments.
+%      UNTITLED('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in UNTITLED.M with the given input arguments.
 %
-%      BAI3('Property','Value',...) creates a new BAI3 or raises the
+%      UNTITLED('Property','Value',...) creates a new UNTITLED or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before bai3_OpeningFcn gets called.  An
+%      applied to the GUI before untitled_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to bai3_OpeningFcn via varargin.
+%      stop.  All inputs are passed to untitled_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help bai3
+% Edit the above text to modify the response to help untitled
 
-% Last Modified by GUIDE v2.5 05-Oct-2024 08:40:55
+% Last Modified by GUIDE v2.5 11-Oct-2024 08:10:05
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @bai3_OpeningFcn, ...
-                   'gui_OutputFcn',  @bai3_OutputFcn, ...
+                   'gui_OpeningFcn', @untitled_OpeningFcn, ...
+                   'gui_OutputFcn',  @untitled_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,26 +44,26 @@ end
 % End initialization code - DO NOT EDIT
 
 
-% --- Executes just before bai3 is made visible.
-function bai3_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before untitled is made visible.
+function untitled_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to bai3 (see VARARGIN)
+% varargin   command line arguments to untitled (see VARARGIN)
 
-% Choose default command line output for bai3
+% Choose default command line output for untitled
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes bai3 wait for user response (see UIRESUME)
+% UIWAIT makes untitled wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = bai3_OutputFcn(hObject, eventdata, handles) 
+function varargout = untitled_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -268,6 +268,16 @@ function edit5_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
+function edit5_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
 
 
 % --- Executes on button press in pushbutton2.
@@ -275,41 +285,69 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-disp('MO PHONG HE THONG DANH GIA DO TIN CAY CUA THIET BI DIEN TU - THM')
+disp('MO PHONG HE THONG DIEU KHIEN TU DONG - THM')
 clc;
 % Khai bao bien 
-syms N lamda T
-N = get(handles.edit1,'String');% Nhan chuoi ky tu trong edit1 gán cho N
-N = str2num(N); %Chuyen gia tri chuoi ký tu sang dang so 
-lamda = get(handles.edit2,'String');% Nh?n chu?i ký t? ? edit2 gán cho k2
-lamda = str2num(lamda); %Chuy?n ??i t? chu?i ký t? sang d?ng s? 
-T = get(handles.edit3,'String');% Nh?n chu?i ký t? ? edit3 gán cho t1
-T = str2num(T); %Chuy?n ??i t? chu?i ký t? sang d?ng s?
-sothietbilamviectincay=0;
-for i = 1:N
- Ui = rand(1);
- ti = -(log(Ui)/lamda);
- if ti>=T
- sothietbilamviectincay = sothietbilamviectincay+1;
+syms a b c d max k1 k2 t1 t2 tm tod xichma gd gm k km ky i
+y = ones(1,1000);%Khai bao y la mot ma tran 1 hang 1000 cot
+k1 = get(handles.edit1,'String');% Nh?n chu?i ký t? ? edit1 gán cho k1
+k1 = str2num(k1); %Chuy?n ??i t? chu?i ký t? sang d?ng s? 
+k2 = get(handles.edit2,'String');% Nh?n chu?i ký t? ? edit2 gán cho k2
+k2 = str2num(k2); %Chuy?n ??i t? chu?i ký t? sang d?ng s? 
+t1 = get(handles.edit3,'String');% Nh?n chu?i ký t? ? edit3 gán cho t1
+t1 = str2num(t1); %Chuy?n ??i t? chu?i ký t? sang d?ng s?
+t2 = get(handles.edit4,'String');% Nh?n chu?i ký t? ? edit4 gán cho t2
+t2 = str2num(t2); %Chuy?n ??i t? chu?i ký t? sang d?ng s? 
+t = get(handles.edit5,'String');% Nh?n chu?i ký t? ? edit1 gán cho t
+t = str2num(t); %Chuy?n ??i t? chu?i ký t? sang d?ng s? 
+y(1,1)=0; % Khai bao phan tu y(1) = 0
+y(1,2)=0; % Khai bao phan tu y(2) = 0
+y(1,3)=0; % Khai bao phan tu y(3) = 0
+a=8*t1*t2+4*t1*t+4*t2*t+2*t*t+k1*k2*t*t*t;
+b=-24*t1*t2-4*t1*t-4*t2*t+2*t*t+3*k1*k2*t*t*t;
+c=24*t1*t2+4*t1*t+4*t2*t-2*t*t+3*k1*k2*t*t*t;
+d=-8*t1*t2+4*t1*t+4*t2*t+2*t*t+k1*k2*t*t*t;
+for k =1:997
+ y(1,k+3)=(-b*y(1,k+2)-c*y(1,k+1)-d*y(1,k)+8*k1*t*t*t)/a;
+end
+% Ch??ng trình ví du 3.1 v? v? ?? th? c?a h? th?ng ?i?u khi?n t? ??ng
+% Tim gia tri lon nhat
+max = y(1,1);
+for k =1:997
+ if y(1,k)>max
+ max = y(1,k);
+ km = k;
  end
 end
-% Do tin cay mo phong la
-Pt = (sothietbilamviectincay/N);
-set(handles.edit9,'String',Pt);
-% Do tin cay ly thuyet la
-Plt = exp(-lamda*T);
-set(handles.edit8,'String',Plt);
-%So thiet bi lam viec tin cay.
-set(handles.edit6,'String',sothietbilamviectincay);
-%So thiet bi lam viec khong tin cay.
-sothietbilamvieckhongtincay = N-sothietbilamviectincay;
-set(handles.edit7,'String',sothietbilamvieckhongtincay);
+set(handles.edit6,'String',max);
+set(handles.edit7,'String',t*km);
+%================================
+%Tim khoang thoi gian on dinh
+k =1000;
+while abs((y(1,k)-(1/k2))/(1/k2))<=0.05 
+ k = k-1;
+ tod=k*t;
+end
+set(handles.edit8,'String',tod);
+% Ch??ng trình ví du 3.1 v? v? ?? th? c?a h? th?ng ?i?u khi?n t? ??ng
+%=================================
+%Tim do qua dieu chinh
+xichma = (max-1/k2)*100/(1/k2);
+set(handles.edit9,'String',xichma);
+%=================================
+%Ve do thi
+tx = 1:1000;
+tx = t*tx;
 subplot(2,2,2);
-pie([sothietbilamviectincay sothietbilamvieckhongtincay ],{'So thiet bi lam viec tin cay','So thiet bi lam viec khong tin cay'})
-% Sai lech giua ly thuyet va mo phong
-sailech= (abs(Pt-Plt)/Plt)*100
-set(handles.edit8,'String',sailech)
-    function pushbutton3_Callback(hObject, eventdata, handles)
+plot(tx,y)
+title('DAC TINH QUA DO CUA HE DKTD');
+xlabel('t(Second)')
+ylabel('y(t)')
+hold on
+grid on
+
+% --- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -321,33 +359,3 @@ if strcmp(hoi,'Yes')
         return;
     end
 end
-
-
-
-function edit19_Callback(hObject, eventdata, handles)
-% hObject    handle to edit19 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit19 as text
-%        str2double(get(hObject,'String')) returns contents of edit19 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edit19_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit19 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-% --- Executes on button press in pushbutton3.
-function pushbutton3_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
